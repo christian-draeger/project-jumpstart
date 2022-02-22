@@ -9,7 +9,7 @@ import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.api.tasks.options.Option
 
-abstract class TemplateExampleTask : DefaultTask() {
+abstract class ExampleTask : DefaultTask() {
 
     init {
         description = "Just a sample template task"

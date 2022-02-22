@@ -6,14 +6,14 @@ import org.junit.Assert.assertNotNull
 import org.junit.Test
 import java.io.File
 
-class TemplatePluginTest {
+class JumpstartPluginTest {
 
     @Test
     fun `plugin is applied correctly to the project`() {
         val project = ProjectBuilder.builder().build()
         project.pluginManager.apply("com.ncorti.kotlin.gradle.template.plugin")
 
-        assert(project.tasks.getByName("templateExample") is TemplateExampleTask)
+        assert(project.tasks.getByName("templateExample") is ExampleTask)
     }
 
     @Test
@@ -29,13 +29,13 @@ class TemplatePluginTest {
         val project = ProjectBuilder.builder().build()
         project.pluginManager.apply("com.ncorti.kotlin.gradle.template.plugin")
         val aFile = File(project.projectDir, ".tmp")
-        (project.extensions.getByName("templateExampleConfig") as TemplateExtension).apply {
+        (project.extensions.getByName("templateExampleConfig") as JumpstartExtension).apply {
             tag.set("a-sample-tag")
             message.set("just-a-message")
             outputFile.set(aFile)
         }
 
-        val task = project.tasks.getByName("templateExample") as TemplateExampleTask
+        val task = project.tasks.getByName("templateExample") as ExampleTask
 
         assertEquals("a-sample-tag", task.tag.get())
         assertEquals("just-a-message", task.message.get())
