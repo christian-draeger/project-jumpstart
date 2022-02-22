@@ -1,10 +1,8 @@
 plugins {
     java
-    // id("codes.draeger.jumpstart")
+    id("codes.draeger.jumpstart.plugin")
 }
 
-/*
-templateExampleConfig {
+jumpstartConfig {
     message.set("Just trying this gradle plugin...")
 }
-*/
