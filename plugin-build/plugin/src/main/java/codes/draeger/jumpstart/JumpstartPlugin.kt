@@ -23,7 +23,7 @@ abstract class JumpstartPlugin : Plugin<Project> {
         project.run {
 
             apply { action: ObjectConfigurationAction ->
-                action.plugin("org.jetbrains.kotlin.jvm")
+                // action.plugin("org.jetbrains.kotlin.jvm")
                 action.plugin("com.adarshr.test-logger")
                 action.plugin("com.github.ben-manes.versions")
             }
@@ -31,6 +31,7 @@ abstract class JumpstartPlugin : Plugin<Project> {
             extensions.run {
                 configure(TestLoggerExtension::class.java) {
                     it.setTheme("mocha-parallel")
+                    @Suppress("MagicNumber")
                     it.slowThreshold = 1000
                 }
             }

@@ -71,3 +71,7 @@ tasks.create("setupPluginUploadFromEnvironment") {
         System.setProperty("gradle.publish.secret", secret)
     }
 }
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+}
