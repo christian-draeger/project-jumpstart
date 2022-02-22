@@ -4,9 +4,21 @@ plugins {
     id("com.gradle.plugin-publish")
 }
 
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://plugins.gradle.org/m2/")
+    }
+}
+
 dependencies {
     implementation(kotlin("stdlib-jdk7"))
     implementation(gradleApi())
+
+    implementation(Lib.KOTLIN_PLUGIN)
+    implementation(Lib.DETEKT)
+    implementation(Lib.TEST_LOGGER)
+    implementation(Lib.VERSIONS_PLUGIN)
 
     testImplementation(TestingLib.JUNIT)
 }
