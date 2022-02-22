@@ -8,7 +8,7 @@ object PluginCoordinates {
 object PluginBundle {
     const val VCS = "https://github.com/christian-draeger/project-jumpstart"
     const val WEBSITE = "https://github.com/christian-draeger/project-jumpstart"
-    const val DESCRIPTION = "An example Gradle plugin"
+    const val DESCRIPTION = "A gradle convenience plugin to jumpstart spring-boot based projects written in kotlin by cutting down project configuration boilerplate in consuming projects."
     const val DISPLAY_NAME = "Jumpstart"
     val TAGS = listOf(
         "plugin",
