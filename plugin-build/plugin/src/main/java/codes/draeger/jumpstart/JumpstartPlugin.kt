@@ -21,7 +21,6 @@ abstract class JumpstartPlugin : Plugin<Project> {
         }
 
         project.run {
-
             apply { action: ObjectConfigurationAction ->
                 // action.plugin("org.jetbrains.kotlin.jvm")
                 action.plugin("com.adarshr.test-logger")
