@@ -1,9 +1,11 @@
 package codes.draeger.jumpstart
 
 import com.adarshr.gradle.testlogger.TestLoggerExtension
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.ObjectConfigurationAction
+import org.gradle.api.tasks.testing.Test
 
 const val EXTENSION_NAME = "jumpstartConfig"
 const val TASK_NAME = "example"
@@ -35,17 +37,19 @@ abstract class JumpstartPlugin : Plugin<Project> {
                 }
             }
 
-            /*afterEvaluate {
-                if (extension.enableDetekt) {
-                    it.applyDetekt()
-                }
-            }*/
-        }
+            dependencies.run {}
 
-        fun Project.applyDetekt() {
-            apply { it.plugin("io.gitlab.arturbosch.detekt") }
-            // TODO; how to configure detekt
-            println("detekt is enabled")
+            allprojects {
+                it.tasks.withType(Test::class.java).configureEach { test ->
+                    test.useJUnitPlatform()
+                }
+            }
+
+            tasks.withType(DependencyUpdatesTask::class.java) { updatesTask ->
+                updatesTask.rejectVersionIf {
+                    "^[0-9,.v-]+(-r)?$".toRegex().matches(it.candidate.version).not()
+                }
+            }
         }
     }
 }
