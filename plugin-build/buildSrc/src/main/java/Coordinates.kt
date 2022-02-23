@@ -1,7 +1,7 @@
 object PluginCoordinates {
     const val ID = "codes.draeger.jumpstart.plugin"
     const val GROUP = "codes.draeger.jumpstart"
-    const val VERSION = "0.1.0-alpha2"
+    const val VERSION = "0.1.0-alpha3"
     const val IMPLEMENTATION_CLASS = "codes.draeger.jumpstart.JumpstartPlugin"
 }
 
