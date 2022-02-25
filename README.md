@@ -9,29 +9,21 @@ It will allow users to start new projects quickly and convenient.
 
 ```kotlin 
 plugins {
-    id("codes.draeger.jumpstart.plugin")
+    id("codes.draeger.jumpstart")
 }
 
-jumpstartConfig {
+jumpstart {
   // ...
 }
 
 ```
 
 ## Features 🎨
-
-### Pre-configured linter
-...
-
-### Spring-Boot
-... 
-#### Docker
+### Test Runner
+all gradle tasks pf type `Test` will use Junit5 runner by default.
 
 ### Test Logger
-...
-
-### Test Runner
-...
+apply testlogger to all projects
 
 ## Contributing 🤝
 

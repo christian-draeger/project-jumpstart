@@ -10,7 +10,7 @@ class JumpstartPluginTest {
     @Test
     fun `plugin is applied correctly to the project`() {
         val project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("codes.draeger.jumpstart.plugin")
+        project.pluginManager.apply("codes.draeger.jumpstart")
 
         assert(project.tasks.getByName("example") is ExampleTask)
     }
@@ -18,7 +18,7 @@ class JumpstartPluginTest {
     @Test
     fun `extension templateExampleConfig is created correctly`() {
         val project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("codes.draeger.jumpstart.plugin")
+        project.pluginManager.apply("codes.draeger.jumpstart")
 
         // assertNotNull(project.extensions.getByName("jumpstartConfig"))
     }
@@ -26,9 +26,9 @@ class JumpstartPluginTest {
     @Test
     fun `parameters are passed correctly from extension to task`() {
         val project = ProjectBuilder.builder().build()
-        project.pluginManager.apply("codes.draeger.jumpstart.plugin")
+        project.pluginManager.apply("codes.draeger.jumpstart")
         val aFile = File(project.projectDir, ".tmp")
-        (project.extensions.getByName("jumpstartConfig") as JumpstartExtension).apply {
+        (project.extensions.getByName("jumpstart") as JumpstartExtension).apply {
             tag.set("a-sample-tag")
             message.set("just-a-message")
             outputFile.set(aFile)

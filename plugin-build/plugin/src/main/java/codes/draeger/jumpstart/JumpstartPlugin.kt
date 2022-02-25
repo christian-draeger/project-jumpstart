@@ -7,7 +7,7 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.ObjectConfigurationAction
 import org.gradle.api.tasks.testing.Test
 
-const val EXTENSION_NAME = "jumpstartConfig"
+const val EXTENSION_NAME = "jumpstart"
 const val TASK_NAME = "example"
 
 abstract class JumpstartPlugin : Plugin<Project> {

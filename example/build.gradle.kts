@@ -1,8 +1,11 @@
 plugins {
     java
-    id("codes.draeger.jumpstart.plugin")
+    id("codes.draeger.jumpstart")
 }
 
-jumpstartConfig {
+jumpstart {
     message.set("Just trying this gradle plugin...")
 }
+
+// will inherit testlogger
+testlogger {}
