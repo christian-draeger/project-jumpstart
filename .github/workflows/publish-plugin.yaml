@@ -15,20 +15,28 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+
       - name: Cache Gradle Caches
         uses: actions/cache@v1
         with:
           path: ~/.gradle/caches/
           key: cache-gradle-cache
+
       - name: Cache Gradle Wrapper
         uses: actions/cache@v1
         with:
           path: ~/.gradle/wrapper/
           key: cache-gradle-wrapper
+
       - name: Run Gradle tasks
         run: ./gradlew preMerge --continue
-      - name: Publish on Plugin Portal
-        run: ./gradlew --project-dir plugin-build setupPluginUploadFromEnvironment publishPlugins
-        if: success()
+
+      - name: Test version via tag
+        run: ./gradlew --project-dir -PreleaseVersion=${{ github.ref_name}} clean :plugin-build:clean :plugin-build:plugin:clean
+
+      #- name: Publish on Plugin Portal
+      #  run: ./gradlew --project-dir -PreleaseVersion=${{ github.event.inputs.version }} plugin-build setupPluginUploadFromEnvironment publishPlugins
+      #  if: success()
+
       - name: Stop Gradle
         run: ./gradlew --stop

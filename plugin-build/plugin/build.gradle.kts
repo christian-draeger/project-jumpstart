@@ -77,3 +77,7 @@ tasks.create("setupPluginUploadFromEnvironment") {
 tasks.withType<Test> {
     useJUnitPlatform()
 }
+
+tasks.withType<Delete> {
+    println("plugin: $releaseVersion")
+}

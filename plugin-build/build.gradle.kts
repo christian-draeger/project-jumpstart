@@ -9,9 +9,11 @@ plugins {
     id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
 }
 
+val releaseVersion = rootProject.property("releaseVersion").toString()
+
 allprojects {
     group = PluginCoordinates.GROUP
-    version = rootProject.property("releaseVersion").toString()
+    version = releaseVersion
 
     repositories {
         google()
@@ -57,5 +59,6 @@ tasks.withType<DependencyUpdatesTask> {
 fun isNonStable(version: String) = "^[0-9,.v-]+(-r)?$".toRegex().matches(version).not()
 
 tasks.register("clean", Delete::class.java) {
+    println("plugin-build: $releaseVersion")
     delete(rootProject.buildDir)
 }
