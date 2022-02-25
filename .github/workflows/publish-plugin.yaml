@@ -32,7 +32,7 @@ jobs:
         run: ./gradlew -PreleaseVersion=${{ github.ref_name}} preMerge --continue
 
       - name: Publish on Plugin Portal
-        run: ./gradlew -PreleaseVersion=${{ github.event.inputs.version }} --project-dir plugin-build setupPluginUploadFromEnvironment publishPlugins
+        run: ./gradlew -PreleaseVersion=${{ github.ref_name}} --project-dir plugin-build setupPluginUploadFromEnvironment publishPlugins
         if: success()
 
       - name: Stop Gradle
