@@ -28,12 +28,14 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+val releaseVersion = rootProject.property("releaseVersion").toString()
+
 gradlePlugin {
     plugins {
         create(PluginCoordinates.ID) {
             id = PluginCoordinates.ID
             implementationClass = PluginCoordinates.IMPLEMENTATION_CLASS
-            version = PluginCoordinates.VERSION
+            version = releaseVersion
         }
     }
 }
@@ -54,7 +56,7 @@ pluginBundle {
     mavenCoordinates {
         groupId = PluginCoordinates.GROUP
         artifactId = PluginCoordinates.ID
-        version = PluginCoordinates.VERSION
+        version = releaseVersion
     }
 }
 

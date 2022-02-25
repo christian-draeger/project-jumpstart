@@ -11,7 +11,7 @@ plugins {
 
 allprojects {
     group = PluginCoordinates.GROUP
-    version = PluginCoordinates.VERSION
+    version = rootProject.property("releaseVersion").toString()
 
     repositories {
         google()
