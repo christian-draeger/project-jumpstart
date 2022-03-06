@@ -1,6 +1,8 @@
 # Jumpstart 
 
-[![License](https://img.shields.io/github/license/cortinico/kotlin-android-template.svg)](LICENSE) ![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
+[![Build](https://github.com/christian-draeger/project-jumpstart/actions/workflows/pre-merge.yaml/badge.svg)](https://github.com/christian-draeger/project-jumpstart/actions/workflows/pre-merge.yaml)
+[![License](https://img.shields.io/github/license/cortinico/kotlin-android-template.svg)](LICENSE) 
+![Language](https://img.shields.io/github/languages/top/cortinico/kotlin-android-template?color=blue&logo=kotlin)
 
 A gradle convention plugin to jumpstart opinionated spring-boot projects written in kotlin by cutting down project configuration boilerplate in consuming projects.
 It will allow users to start new projects quickly and convenient.
