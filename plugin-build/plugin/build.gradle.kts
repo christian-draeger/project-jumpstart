@@ -12,15 +12,22 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk7"))
     implementation(gradleApi())
 
+    // kotlin
+    // implementation(kotlin("stdlib-jdk8"))
+    // implementation(kotlin("reflect"))
     implementation(Lib.KOTLIN_PLUGIN)
-    implementation(Lib.DETEKT)
-    implementation(Lib.TEST_LOGGER)
-    implementation(Lib.VERSIONS_PLUGIN)
 
-    testImplementation(TestingLib.JUNIT)
+    // third party
+    implementation(Lib.DETEKT)
+    implementation(Lib.VERSIONS_PLUGIN)
+    implementation(ThirdParty.Plugins.TEST_LOGGER_PLUGIN)
+    implementation(ThirdParty.Plugins.SpringBoot.GRADLE_PLUGIN)
+    implementation(ThirdParty.Plugins.GIT_PROPERTIES_PLUGIN)
+    implementation(ThirdParty.Plugins.KOVER)
+
+    testImplementation(ThirdParty.Libs.Testing.JUNIT)
 }
 
 java {

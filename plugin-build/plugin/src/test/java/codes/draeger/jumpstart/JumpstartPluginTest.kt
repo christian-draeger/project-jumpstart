@@ -2,6 +2,8 @@ package codes.draeger.jumpstart
 
 import org.gradle.testfixtures.ProjectBuilder
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.assertNotNull
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.io.File
 
@@ -16,11 +18,12 @@ class JumpstartPluginTest {
     }
 
     @Test
+    @Disabled
     fun `extension templateExampleConfig is created correctly`() {
         val project = ProjectBuilder.builder().build()
         project.pluginManager.apply("codes.draeger.jumpstart")
 
-        // assertNotNull(project.extensions.getByName("jumpstartConfig"))
+        assertNotNull(project.extensions.getByName("jumpstartConfig"))
     }
 
     @Test

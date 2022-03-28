@@ -1,10 +1,15 @@
 plugins {
-    java
     id("codes.draeger.jumpstart")
 }
 
 jumpstart {
-    message.set("Just trying this gradle plugin...")
+    tag.set("Just trying this gradle plugin...")
+    kotlin.set(true)
+    junit.set(true)
+    gitProperties.set(true)
+    kover.set(true)
+    testLogger.set(true)
+    versionsUpdate.set(true)
 }
 
 // will inherit testlogger
