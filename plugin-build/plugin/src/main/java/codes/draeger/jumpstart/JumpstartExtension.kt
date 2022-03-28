@@ -30,6 +30,7 @@ abstract class JumpstartExtension @Inject constructor(project: Project) {
         versionsUpdate.convention(true)
     }
 
+    @Optional
     val tag: Property<String> = objects.property(String::class.java)
 
     // Example of a property with a default set with .convention
