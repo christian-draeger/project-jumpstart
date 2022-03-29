@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import java.io.File
 
+@Disabled
 class JumpstartPluginTest {
 
     @Test
@@ -33,7 +34,6 @@ class JumpstartPluginTest {
         val aFile = File(project.projectDir, ".tmp")
         (project.extensions.getByName("jumpstart") as JumpstartExtension).apply {
             tag.set("a-sample-tag")
-            message.set("just-a-message")
             outputFile.set(aFile)
         }
 

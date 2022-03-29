@@ -8,7 +8,8 @@ fun Project.applyJUnit(enabled: Boolean = true) {
         allprojects {
             dependencies.run {
                 // how to apply dependency ???
-                // add("default", "org.junit.jupiter:junit-jupiter:5.8.2")
+                // add("test", "org.junit.jupiter:junit-jupiter:5.8.2")
+                // create("org.junit.jupiter:junit-jupiter:5.8.2")
             }
             it.tasks.withType(Test::class.java).configureEach { test ->
                 test.useJUnitPlatform()

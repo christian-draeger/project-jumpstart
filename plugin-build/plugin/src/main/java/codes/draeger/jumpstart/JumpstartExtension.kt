@@ -1,6 +1,5 @@
 package codes.draeger.jumpstart
 
-import codes.draeger.jumpstart.features.testlogger.JumpstartTestLoggerExtension
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
 import org.gradle.api.provider.Property
@@ -37,10 +36,4 @@ abstract class JumpstartExtension @Inject constructor(project: Project) {
     val outputFile: RegularFileProperty = objects.fileProperty().convention(
         project.layout.buildDirectory.file(DEFAULT_OUTPUT_FILE)
     )
-
-
-    ////
-
-    val testLoggerDisabled: Property<Boolean> = objects.property(Boolean::class.java)
-    val testLoggerPlugin: Property<JumpstartTestLoggerExtension> = objects.property(JumpstartTestLoggerExtension::class.java)
 }
