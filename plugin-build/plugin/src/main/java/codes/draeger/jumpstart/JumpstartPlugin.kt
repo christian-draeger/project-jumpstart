@@ -29,7 +29,7 @@ abstract class JumpstartPlugin : Plugin<Project> {
             applyJUnit(extension.junit.get())
             applyGitProperties(extension.gitProperties.get())
             applyVersionUpdates(extension.versionsUpdate.get())
-            applyKover(extension.kover.get())
+            // applyKover(extension.kover.get())
         }
     }
 }

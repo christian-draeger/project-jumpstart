@@ -7,5 +7,5 @@ pluginManagement {
 
 rootProject.name = ("jumpstart")
 
-// include(":example")
+include(":example")
 includeBuild("plugin-build")

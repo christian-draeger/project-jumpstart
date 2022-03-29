@@ -23,7 +23,7 @@ class JumpstartPluginTest {
         val project = ProjectBuilder.builder().build()
         project.pluginManager.apply("codes.draeger.jumpstart")
 
-        assertNotNull(project.extensions.getByName("jumpstartConfig"))
+        assertNotNull(project.extensions.getByName("jumpstart"))
     }
 
     @Test
